@@ -1,0 +1,40 @@
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Comic Sans MS;
+    font-size: 16px;
+    color: black;
+    background-color: #f7f;
+}
+
+section {
+    position: relative;
+    top: 40%;
+}
+
+.top,
+.bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 40%;
+}
+
+.top {
+    top: 0;
+}
+
+img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+table {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
