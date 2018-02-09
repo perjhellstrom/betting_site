@@ -1,23 +1,72 @@
 @import url("base.css");
 
-
-.column-container,
-.row-container {
-    display: flex;
+* {
+    background-color: #a9a9a9;
 }
 
-.column-container {
-    flex-direction: column;
+section {
+    margin: 10px 0 10px 0;
 }
 
+h2 {
+    border-bottom: 2px solid gray;
+}
+
+p {
+    font-size: 14px;
+}
 
 .header {
-    height: 100px;
+    display: flex;
     flex: 1 1 auto;
+    justify-content: flex-end;
+    height: 25px;
 }
 
-.button-list {
+.header-button {
+    margin-left: 10px;
+}
+
+.navigation {
+    display: flex;
     height: 100px;
+}
+
+.navigation img {
+    width: 200px;
+    background-color: #e3dac9;
+}
+
+.tab-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    padding-left: 50px;
+    background-color: #e3dac9;
+}
+
+.tab {
+    flex-shrink: 0;
+    height: 35px;
+    margin-left: 20px;
+    padding: 0 10px 0 10px;
+}
+
+.tab,
+.header-button {
+    font-size: 16px;
+}
+
+.tournament-list-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 150px;
+    flex-shrink: 0;
+}
+
+.tournament-list-item {
+    margin-top: 20px;
+    border-bottom: 1px solid gray; 
 }
 
 .tournament-container {
@@ -30,13 +79,53 @@
 }
 
 .tournament-rankings {
-    flex-basis: 750px;
+    flex-basis: 400px;
     flex-shrink: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid gray;
+    padding: 0 10px 0 10px;
+}
+
+.ranking-header-cell {
+    background-color: #d3d3d3;
+}
+
+.ranking-cell-rank,
+.ranking-cell-points {
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+
+.ranking-cell-name {
+    padding: 0 25px 0 10px;
+}
+
+.ranking-gold {
+    background-color: #ffd700;
+}
+
+.ranking-silver {
+    background-color: #c0c0c0;
+}
+
+.ranking-bronze {
+    background-color: #cd7f32; 
 }
 
 .tournament-information {
     flex-basis: 250px;
     flex-shrink: 0;
+    height: 250px;
+}
+
+.tournament-bracket {
 }
 
 div {
