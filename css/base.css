@@ -1,8 +1,16 @@
 
 * {
     font-family: Comic Sans MS;
-    font-size: 16px;
     background-color: #f9f;
     margin: 0;
     padding: 0;
+}
+
+.column-container,
+.row-container {
+    display: flex;
+}
+
+.column-container {
+    flex-direction: column;
 }
