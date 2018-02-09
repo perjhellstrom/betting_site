@@ -1,0 +1,48 @@
+@import url("base.css");
+
+
+.column-container,
+.row-container {
+    display: flex;
+}
+
+.column-container {
+    flex-direction: column;
+}
+
+
+.header {
+    height: 100px;
+    flex: 1 1 auto;
+}
+
+.button-list {
+    height: 100px;
+}
+
+.tournament-container {
+    flex: 1 1 auto;
+}
+
+.tournament-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tournament-rankings {
+    flex-basis: 750px;
+    flex-shrink: 0;
+}
+
+.tournament-information {
+    flex-basis: 250px;
+    flex-shrink: 0;
+}
+
+div {
+    border: 1px dashed red;
+}
+
+p {
+    border: 1px dashed lime;
+}
