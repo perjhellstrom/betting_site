@@ -7,28 +7,21 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-	<div style="height: 100px;"></div>
 	<div class="flex-container" style="flex-direction: column;">
 		<div>
 			<img src="../resources/logo.png" alt="Fett med både syra å fett med spray!">
 		</div>
-		<div style="height: 25px;"></div>
 		<div>
-			<div class="flex-container">
-				<div class="text-item">
-					<p>Email:</p>
-				</div>
-				<div>
-					<input type="text">
-				</div>
+			<div class="input-container">
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" placeholder="Enter your email">
 			</div>
-			<div class="flex-container">
-				<div class="text-item">
-					<p>Password:</p>
-				</div>
-				<div>
-					<input type="password">
-				</div>
+			<div class="input-container">
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" placeholder="Enter password">
+			</div>
+			<div class="button-container">
+				<button>Login</button>
 			</div>
 		</div>
 	</div>
