@@ -2,7 +2,7 @@
 function DetailedMatchWindow(element) {
 	this.element = element;
 	this.position = {top:0, left:0};
-	this.scrollOffset = 0;
+	this.scroll = {top:0, left:0};
 
 	this.hide = function() {
 		this.element.hide();
@@ -13,7 +13,10 @@ function DetailedMatchWindow(element) {
 	}
 
 	this.update = function() {
-		this.element.css({top: this.position.top - this.scrollOffset, left: this.position.left});
+		this.element.css({
+			top: this.position.top - this.scroll.top, 
+			left: this.position.left - this.scroll.left
+		});
 	}
 
 	this.setPosition = function(position) {
@@ -25,8 +28,9 @@ function DetailedMatchWindow(element) {
 		return this.position.top == position.top && this.position.left == position.left;
 	}
 
-	this.setScrollOffset = function(scrollOffset) {
-		this.scrollOffset = scrollOffset;
+	this.setScroll = function(scrollTop, scrollLeft) {
+		this.scroll.top = scrollTop;
+		this.scroll.left = scrollLeft;
 		this.update();
 	}
 }
@@ -44,9 +48,9 @@ $(".bracket-match").click(function() {
 });
 
 $(window).scroll(function() {
-    detailedMatchWindow.setScrollOffset($(window).scrollTop());
+    detailedMatchWindow.setScroll($(window).scrollTop(), $(window).scrollLeft());
 });
 
 $(window).resize(function() {
-	detailedMatchWindow.setScrollOffset($(window).scrollTop());
+	detailedMatchWindow.setScroll($(window).scrollTop(), $(window).scrollLeft());
 });
