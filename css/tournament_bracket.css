@@ -23,30 +23,11 @@
 	align-items: center;
 }
 
-.bracket-match-16,
-.bracket-match-8,
-.bracket-match-4,
-.bracket-match-2 {
+.bracket-match {
 	display: flex;
 	flex-direction: column;
 	min-width: 150px;
 	border: 1px solid black;
-}
-
-.bracket-match-16 {
-	margin: 0px 0 0px 0;
-}
-
-.bracket-match-8 {
-	margin: 0px 0 0px 0;
-}
-
-.bracket-match-4 {
-	margin: 0px 0 0px 0;
-}
-
-.bracket-match-2 {
-	margin: 0px 0 0px 0;
 }
 
 .bracket-match-player {
