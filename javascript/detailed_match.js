@@ -3,15 +3,13 @@ function DetailedMatchWindow(element) {
 	this.element = element;
 	this.position = {top:0, left:0};
 	this.scrollOffset = 0;
-	this.isVisible = false;
 
-	this.toggleVisibility = function() {
-		this.isVisible = !this.isVisible;
-		if (this.isVisible) {
-			this.element.show();
-		} else {
-			this.element.hide();
-		}
+	this.hide = function() {
+		this.element.hide();
+	}
+
+	this.show = function() {
+		this.element.show();
 	}
 
 	this.update = function() {
@@ -23,6 +21,10 @@ function DetailedMatchWindow(element) {
 		this.update();
 	}
 
+	this.positionIsSame = function(position) {
+		return this.position.top == position.top && this.position.left == position.left;
+	}
+
 	this.setScrollOffset = function(scrollOffset) {
 		this.scrollOffset = scrollOffset;
 		this.update();
@@ -32,8 +34,13 @@ function DetailedMatchWindow(element) {
 var detailedMatchWindow = new DetailedMatchWindow($("#detailed-match"));
 
 $(".bracket-match").click(function() {
-	detailedMatchWindow.setPosition($(this).position());
-	detailedMatchWindow.toggleVisibility();
+	var position = $(this).position();
+	if (detailedMatchWindow.positionIsSame(position)) {
+		detailedMatchWindow.hide();
+	} else {
+		detailedMatchWindow.show();
+	}
+	detailedMatchWindow.setPosition(position);
 });
 
 $(window).scroll(function() {
