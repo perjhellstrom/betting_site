@@ -27,6 +27,13 @@ function DetailedMatchWindow(element) {
 	}
 }
 
+var buildDetailedMatchWindow = function(bracketMatch) {
+	for(var index = 0; index < bracketMatch.children().length; index++)
+	{
+		$("#detailed-match").children()[index].innerText = bracketMatch.children()[index].innerText;
+	}
+}
+
 var detailedMatchWindow = new DetailedMatchWindow($("#detailed-match"));
 detailedMatchWindow.hide();
 
@@ -37,6 +44,7 @@ $(".bracket-match").click(function() {
 		detailedMatchWindow.hide();
 	} else {
 		detailedMatchWindow.show();
+		buildDetailedMatchWindow($(this));
 	}
 	detailedMatchWindow.position = position;
 	detailedMatchWindow.update();
