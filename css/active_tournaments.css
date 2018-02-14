@@ -1,5 +1,6 @@
 @import url("base.css");
 @import url("tournament_bracket.css");
+@import url("detailed_match.css");
 
 * {
     background-color: #a9a9a9;
