@@ -32,16 +32,11 @@ var detailedMatchWindow = new DetailedMatchWindow($("#detailed-match"));
 $(".bracket-match").click(function() {
 	var position = $(this).position();
 	position.left += $(this).width();
-
-
 	if (detailedMatchWindow.positionIsSame(position) && detailedMatchWindow.isVisible) {
 		detailedMatchWindow.hide();
 	} else {
 		detailedMatchWindow.show();
 	}
-
-
-
 	detailedMatchWindow.position = position;
 	detailedMatchWindow.update();
 });
