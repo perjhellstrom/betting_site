@@ -28,6 +28,7 @@ function DetailedMatchWindow(element) {
 }
 
 var detailedMatchWindow = new DetailedMatchWindow($("#detailed-match"));
+detailedMatchWindow.hide();
 
 $(".bracket-match").click(function() {
 	var position = $(this).position();
