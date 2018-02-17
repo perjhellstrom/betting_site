@@ -1,28 +1,49 @@
+@import url("base.css");
 
 .group-container {
 	display: flex;
 }
 
-.group {
-	display: flex;
-	flex-direction: column;
-	margin-left: 20px;
-	border: 1px dashed red;
+.group-container table {
+    border-collapse: collapse;
+    margin-right: 25px;
 }
 
-.group-title-bar,
-.group-time-bar {
-	text-align: center;
+.group-container th,
+.group-container td {
+    border: 1px solid gray;
+    padding: 0 10px 0 10px;
 }
 
-.group-title-bar {
+.group-name-header {
 	font-weight: bold;
+    background-color: gray;
 }
 
-.group-time-bar {
-	font-size: 14px;
+.group-time-header {
+	font-size: 12px;
+    background-color: #d3d3d3;
 }
 
-.group-player-bar {
-	font-size: 14px;
+.group-player-rank,
+.group-player-score,
+.group-player-matches {
+    text-align: center;
+}
+
+.group-player-rank,
+.group-player-score {
+    font-weight: bold;
+}
+
+.group-player-name {
+    padding: 0 25px 0 10px;
+}
+
+.group-color-red {
+	background-color: #fcc;
+}
+
+.group-color-green {
+	background-color: #cfc;
 }

@@ -1,5 +1,4 @@
 @import url("base.css");
-@import url("group_stage.css");
 @import url("detailed_match.css");
 
 * {
@@ -85,12 +84,12 @@ p {
     flex-shrink: 0;
 }
 
-table {
+.tournament-rankings table {
     border-collapse: collapse;
 }
 
-th,
-td {
+.tournament-rankings th,
+.tournament-rankings td {
     border: 1px solid gray;
     padding: 0 10px 0 10px;
 }
@@ -127,12 +126,18 @@ td {
     height: 250px;
 }
 
-/*
+
 div {
     border: 1px dashed red;
 }
-*/
+
 
 p {
     border: 1px dashed lime;
+}
+
+
+.footer {
+    text-align: center;
+    height: 50px;
 }
