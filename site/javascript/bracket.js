@@ -28,7 +28,7 @@ function DetailedMatchWindow(element) {
 
     this.updateInformation = function(element) {
         var teamContainer = element.children[0];
-        for (var index = 0; index < teamContainer.children.length - 1; index++){
+        for (var index = 0; index < 2; index++) {
             var innerText = teamContainer.children[index].children[0].innerText;
             this.element.children[index].innerText = innerText;
         }
