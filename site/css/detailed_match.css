@@ -4,6 +4,7 @@
 	position: fixed;
 	margin-left: 10px;
 	border: 1px dashed red;
+	z-index: 100;
 }
 
 .detailed-match-player {
