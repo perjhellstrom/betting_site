@@ -1,0 +1,28 @@
+
+.group-container {
+	display: flex;
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	border: 1px dashed red;
+}
+
+.group-title-bar,
+.group-time-bar {
+	text-align: center;
+}
+
+.group-title-bar {
+	font-weight: bold;
+}
+
+.group-time-bar {
+	font-size: 14px;
+}
+
+.group-player-bar {
+	font-size: 14px;
+}
