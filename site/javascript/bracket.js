@@ -44,8 +44,8 @@ detailedMatchWindow.hide();
 
 var getDocumentPosition = function(element) {
     var position = {
-    	left: element.offsetLeft, 
-    	top: element.offsetTop
+        left: element.offsetLeft, 
+        top: element.offsetTop
     };
     var bodyElement = document.getElementsByTagName("body")[0];
     while (element.offsetParent) {
@@ -61,6 +61,17 @@ var getDocumentPosition = function(element) {
     return position;
 }
 
+var hangRightOf = function(parentELement, position) {
+    position.left += parentELement.offsetWidth;
+    if (parentELement.children[0].style.top != "") {
+        position.top += parseFloat(parentELement.children[0].style.top);  
+    } else if (parentELement.children[0].style.bottom != "") {
+        var matchHeight = parseFloat(parentELement.style.height);
+        var teamContainerBottom = parseFloat(parentELement.children[0].style.bottom);
+        position.top += matchHeight + teamContainerBottom;
+    }
+    return position;
+}
 
 var bracketData = {
 	teams : [
@@ -134,10 +145,8 @@ var doubleElimination = {
 }
 
 var onMatchClick = function(event) {
-	var position = getDocumentPosition(this)
-	// Position the window at the same height and just to the right of the clicked element
-	position.left += this.offsetWidth;
-    position.top += parseFloat(this.children[0].style.top);
+	var position = getDocumentPosition(this);
+	position = hangRightOf(this, position);
 	if (detailedMatchWindow.positionIsSame(position) && detailedMatchWindow.isVisible) {
 		detailedMatchWindow.hide();
 	} else {
@@ -156,7 +165,7 @@ var readScroll = function(event) {
 
 window.addEventListener("load", function(event) {
 	$('#bracket').bracket({
-		init: singleElimination, /* data to initialize the bracket with */
+		init: bracketData, /* data to initialize the bracket with */
         //skipSecondaryFinal: true,
 		teamWidth: 80
 	});
