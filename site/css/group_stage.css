@@ -2,11 +2,12 @@
 
 .group-container {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .group-container table {
     border-collapse: collapse;
-    margin-right: 25px;
+    margin: 0 15px 15px 0;
 }
 
 .group-container th,
