@@ -1,0 +1,43 @@
+@import url("base.css");
+
+.group-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.better-ranking-container table {
+    border-collapse: collapse;
+    margin: 0 15px 15px 0;
+}
+
+.better-ranking-container th,
+.better-ranking-container td {
+    padding: 0 10px 0 10px;
+    border: 1px solid gray;
+}
+
+.better-ranking-container th {
+    background-color: #d3d3d3;
+}
+
+.better-ranking-rank,
+.better-ranking-score {
+    text-align: center;
+    font-weight: bold;
+}
+
+.group-player-name {
+    padding: 0 25px 0 10px;
+}
+
+.better-ranking-gold {
+    background-color: #ffd700;
+}
+
+.better-ranking-silver {
+    background-color: #c0c0c0;
+}
+
+.better-ranking-bronze {
+    background-color: #cd7f32; 
+}

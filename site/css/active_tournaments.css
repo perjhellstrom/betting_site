@@ -84,42 +84,6 @@ p {
     flex-shrink: 0;
 }
 
-.tournament-rankings table {
-    border-collapse: collapse;
-}
-
-.tournament-rankings th,
-.tournament-rankings td {
-    border: 1px solid gray;
-    padding: 0 10px 0 10px;
-}
-
-.ranking-header-cell {
-    background-color: #d3d3d3;
-}
-
-.ranking-cell-rank,
-.ranking-cell-points {
-    text-align: center;
-    padding: 0 10px 0 10px;
-}
-
-.ranking-cell-name {
-    padding: 0 25px 0 10px;
-}
-
-.ranking-gold {
-    background-color: #ffd700;
-}
-
-.ranking-silver {
-    background-color: #c0c0c0;
-}
-
-.ranking-bronze {
-    background-color: #cd7f32; 
-}
-
 .tournament-information {
     flex-basis: 250px;
     flex-shrink: 0;
