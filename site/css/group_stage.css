@@ -1,17 +1,17 @@
 @import url("base.css");
 
-.group-container {
+.group-stage-container {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.group-container table {
+.group-stage-container table {
     border-collapse: collapse;
     margin: 0 15px 15px 0;
 }
 
-.group-container th,
-.group-container td {
+.group-stage-container th,
+.group-stage-container td {
     border: 1px solid gray;
     padding: 0 10px 0 10px;
 }
