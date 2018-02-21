@@ -5,46 +5,76 @@
 	flex-wrap: wrap;
 }
 
-.group-stage-container table {
-    border-collapse: collapse;
-    margin: 0 15px 15px 0;
-}
-
-.group-stage-container th,
-.group-stage-container td {
-    border: 1px solid gray;
-    padding: 0 10px 0 10px;
-}
-
-.group-name-header {
-	font-weight: bold;
-    background-color: gray;
-}
-
-.group-time-header {
-	font-size: 12px;
-    background-color: #d3d3d3;
-}
-
-.group-player-rank,
-.group-player-score,
-.group-player-matches {
-    text-align: center;
-}
-
-.group-player-rank,
-.group-player-score {
-    font-weight: bold;
-}
-
-.group-player-name {
-    padding: 0 25px 0 10px;
-}
-
 .group-color-red {
 	background-color: #fcc;
 }
 
 .group-color-green {
 	background-color: #cfc;
+}
+
+.group-frame {
+	display: flex;
+	flex-direction: column;
+    margin: 0 15px 15px 0;
+}
+
+.group-container {
+	display: flex;
+}
+
+.group-header,
+.group-sub-header {
+	padding: 0 8px 0 8px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	align-items: stretch;
+}
+
+.group-header {
+	font-size: 16px;
+    background-color: gray;
+	border: 1px solid gray;
+}
+
+.group-sub-header {
+	font-size: 12px;
+    background-color: #d3d3d3;
+}
+
+.group-player-row {
+	display: flex;
+}
+
+.group-player-rank,
+.group-player-name,
+.group-player-score,
+.group-player-matches {
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+.group-player-rank,
+.group-player-score,
+.group-player-matches {
+	text-align: center;
+}
+
+.group-player-rank {
+	border-left: 1px solid gray;
+	min-width: 32px;
+}
+
+.group-player-name {
+	padding: 0 12px 0 8px;
+	flex-grow: 1;
+}
+
+.group-player-score,
+.group-player-matches {
+	min-width: 40px;
+	padding: 0 3px 0 3px;
 }
