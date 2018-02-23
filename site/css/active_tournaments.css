@@ -69,7 +69,7 @@ p {
     background-color: #a9a9a9;
 }
 
-.active-tournament {
+.main {
     display: flex;
     justify-content: space-between;
     background-color: #a9a9a9;
@@ -87,7 +87,7 @@ p {
     border-bottom: 1px solid gray; 
 }
 
-.tournament-container {
+.page {
     flex: 1 1 auto;
     padding: 0 10px 0 10px;
 }

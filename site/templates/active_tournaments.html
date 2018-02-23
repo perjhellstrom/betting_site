@@ -21,12 +21,12 @@
         <nav class="navigation">
             <img src="../resources/logo.png" alt="Fett med både syra å fett med spray!">
             <div class="tab-container">
-                <div class="tab tab-active">Turneringar</div>
-                <div class="tab">Skapa turnering</div>
+                <div id="tournaments-button" class="tab">Turneringar</div>
+                <div id="create-tournament-button" class="tab">Skapa turnering</div>
             </div>
         </nav>
         <script src="../javascript/page_switcher.js"></script>
-        <div class="active-tournament">
+        <div class="main">
             <div class="tournament-list-container">
                 <div class="tournament-list-item">Deltagande</div>
                 <a href="">WCS 2018</a>
@@ -38,7 +38,7 @@
                 <div class="tournament-list-item">Klara</div>
                 <a href="">Meme Open</a>
             </div>
-            <div class="tournament-container">
+            <div id="tournaments-page" class="page">
                 <div class="tournament-header-container">
                     <div class="tournament-rankings">
                         <section>
@@ -178,6 +178,9 @@
                     </div>
                     <script src="../javascript/bracket.js"></script>
                 </div>
+            </div>            
+            <div id="create-tournament-page" class="page">
+                <p>Hellu fren!</p>
             </div>
             <div class="tournament-information">
                 <section>
