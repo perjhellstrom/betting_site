@@ -1,9 +1,4 @@
 @import url("base.css");
-@import url("detailed_match.css");
-
-* {
-    background-color: #a9a9a9;
-}
 
 section {
     margin: 10px 0 10px 0;
@@ -22,6 +17,7 @@ p {
     flex: 1 1 auto;
     justify-content: flex-end;
     height: 25px;
+    background-color: #a9a9a9;
 }
 
 .header-button {
@@ -60,6 +56,16 @@ p {
 .tab,
 .header-button {
     font-size: 16px;
+}
+
+.tab:hover,
+.tab-active {
+    background-color: #a9a9a9;
+}
+
+.active-tournament {
+    display: flex;
+    background-color: #a9a9a9;
 }
 
 .tournament-list-container {
