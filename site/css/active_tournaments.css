@@ -12,6 +12,12 @@ p {
     font-size: 14px;
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .header {
     display: flex;
     flex: 1 1 auto;
@@ -106,12 +112,10 @@ div {
     border: 1px dashed red;
 }
 
-
 p {
     border: 1px dashed lime;
 }
 */
-
 
 .footer {
     margin-top: 10px;
