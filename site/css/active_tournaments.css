@@ -65,6 +65,7 @@ p {
 
 .active-tournament {
     display: flex;
+    justify-content: space-between;
     background-color: #a9a9a9;
 }
 
