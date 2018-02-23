@@ -164,7 +164,7 @@ var readScroll = function(event) {
 }
 
 window.addEventListener("load", function(event) {
-	$('#bracket').bracket({
+	$("#bracket").bracket({
 		init: bracketData, /* data to initialize the bracket with */
         //skipSecondaryFinal: true,
 		teamWidth: 80
@@ -175,5 +175,5 @@ window.addEventListener("load", function(event) {
 	}
 });
 
-window.addEventListener('scroll', readScroll);
-window.addEventListener('resize', readScroll);
+window.addEventListener("scroll", readScroll);
+window.addEventListener("resize", readScroll);
