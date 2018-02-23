@@ -45,6 +45,10 @@
     background-color: #d3d3d3;
 }
 
+.group-player-row-container {
+	position: relative;
+}
+
 .group-player-row {
 	display: flex;
 }
@@ -77,4 +81,24 @@
 .group-player-matches {
 	min-width: 40px;
 	padding: 0 3px 0 3px;
+}
+
+.group-player-highlight {
+	position: absolute;
+	left: 0; 
+	top: 0; 
+	right: 0; 
+	bottom: 0;
+	background: transparent;
+	border: 2px solid black;
+}
+
+.group-player-hover {
+	position: fixed;
+	margin-left: 20px;
+	margin-top: -10px;
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	z-index: 20;
 }
