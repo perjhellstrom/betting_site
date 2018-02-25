@@ -107,6 +107,12 @@ p {
     flex-shrink: 0;
 }
 
+.footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 /*
 div {
     border: 1px dashed red;
@@ -116,9 +122,3 @@ p {
     border: 1px dashed lime;
 }
 */
-
-.footer {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
