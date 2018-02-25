@@ -12,26 +12,16 @@ var disablePages = function() {
     }
 };
 
-var enablePage = function(id) {
-    document.getElementById(id).style.display = "block";
-}
-
-var enableCurrentTabPage = function(tabId) {
-    switch (tabId) {
-        case "tournaments-button":
-            enablePage("tournaments-page");
-            break;
-        case "create-tournament-button":
-            enablePage("create-tournament-page");
-            break;
-    }
+var enablePage = function(tabId) {
+    pageId = tabId.replace("tab", "page");
+    document.getElementById(pageId).style.display = "block";
 }
 
 var onTabClick = function(event) {
     deactivateTabs();
     disablePages();
     event.target.classList.add("tab-active");
-    enableCurrentTabPage(event.target.id);
+    enablePage(event.target.id);
 }
 
 window.addEventListener("load", function(event) {
@@ -42,6 +32,5 @@ window.addEventListener("load", function(event) {
 
     deactivateTabs();
     disablePages();
-    tabs[0].classList.add("tab-active");
-    enableCurrentTabPage(tabs[0].id);
+    document.getElementById("tournament-page").style.display = "block";
 });
