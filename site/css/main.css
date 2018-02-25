@@ -92,11 +92,6 @@ p {
     padding: 0 10px 0 10px;
 }
 
-.tournament-header-container {
-    display: flex;
-    justify-content: space-between;
-}
-
 .tournament-rankings {
     flex-basis: 400px;
     flex-shrink: 0;
