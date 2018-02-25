@@ -1,0 +1,19 @@
+@import url("base.css");
+@import url("group_stage.css");
+
+.creation-control-panel {
+	display: flex;
+	margin: 3px 0 3px 0;
+}
+
+.creation-control-panel-button {
+	background-color: red;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.creation-control-panel-button:hover {
+	background-color: lime;
+}

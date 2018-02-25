@@ -23,8 +23,8 @@
         <nav class="navigation">
             <img src="../resources/logo.png" alt="Fett med både syra å fett med spray!">
             <div class="tab-container">
-                <div id="bracket-only-tab" class="tab">Bracket Only</div>
-                <div id="group-before-bracket-tab" class="tab">Group/Bracket</div>
+                <div id="bracket-only-tab" class="tab">Create Bracket Only</div>
+                <div id="group-before-bracket-tab" class="tab">Create Group/Bracket</div>
             </div>
         </nav>
         <script src="../javascript/page_switcher.js"></script>
@@ -187,7 +187,17 @@
                 Creating bracket only
             </div>
             <div id="group-before-bracket-page" class="page">
-                Creating group stage before bracket
+                <div class="creation-stage">
+                    <section>
+                        <h3>Group Stage 1</h3>
+                    </section>
+                    <div class="creation-control-panel">
+                        <div class="creation-control-panel-button">Add group</div>
+                    </div>
+                    <div class="group-stage-container"></div>
+                </div>
+                <button>Create tournament</button>
+                <script src="../javascript/group_creation.js"></script>
             </div>
         </div>
         <footer class="footer">
