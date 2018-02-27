@@ -1,3 +1,28 @@
+var editedElement = null;
+
+var editText = function(){
+    editedElement = $(this);
+    var name = editedElement.text();
+    editedElement.html('');
+    $('<input></input>')
+        .attr({
+            'type': 'text',
+            'name': 'fname',
+            'id': 'editingElement',
+            'value': name
+        })
+        .appendTo(editedElement);
+    $('#editingElement').focus();
+}
+
+$('#fullname').click(editText);
+
+$(document).on('blur','#editingElement', function(){
+    var name = $(this).val();
+    editedElement.text(name);
+});
+
+
 var appendElementOn = function(parent, selector) {
     var element = document.createElement("div");
     element.setAttribute("class", selector);
@@ -5,6 +30,7 @@ var appendElementOn = function(parent, selector) {
     return element;
 };
 
+var groupsCreated = 0;
 
 var onButtonClick = function(event) {
     var creationControlPanelElement = event.target.parentElement;
@@ -17,9 +43,12 @@ var onButtonClick = function(event) {
     var dateHeader = appendElementOn(groupFrameElement, "group-sub-header");
     var statusHeader = appendElementOn(groupFrameElement, "group-sub-header");
 
-    nameHeader.innerText = "Name";
+    var groupLetter = String.fromCharCode(groupsCreated + 97).toUpperCase();
+    groupsCreated += 1;
+
+    nameHeader.innerText = "Group " + groupLetter;
     dateHeader.innerText = "Date";
-    statusHeader.innerText = "Status";
+    statusHeader.innerText = "-";
 
     for (var i = 0; i < 4; i++) {
         var playerRowContainer = appendElementOn(groupFrameElement, "group-player-row-container");
@@ -31,9 +60,10 @@ var onButtonClick = function(event) {
         var matches = appendElementOn(playerRow, "group-player-matches");
         
         rank.innerText = i + 1;
-        name.innerText = "Enter a name...";
-        score.innerText = "0";
-        matches.innerText = "0";
+        name.innerText = "Player/Team";
+        name.onclick = editText;
+        score.innerText = "-";
+        matches.innerText = "-";
     }
 };
 
