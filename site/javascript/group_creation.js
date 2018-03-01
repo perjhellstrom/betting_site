@@ -43,23 +43,6 @@ function GroupLabeler() {
 
 var groupLabeler = new GroupLabeler();
 
-var appendDivOn = function(parent, selector) {
-    var element = document.createElement("div");
-    element.setAttribute("class", selector);
-    parent.appendChild(element);
-    return element;
-};
-
-var appendInputOn = function(parent, type) {
-    var element = document.createElement("input");
-    element.setAttribute("type", type);
-    element.required = true;
-    parent.appendChild(element);
-    return element;
-};
-
-
-
 var removeGroup = function() {
     var groupStageContainer = this.closest(".group-stage-container");
     groupStageContainer.removeChild(this.parentNode);
