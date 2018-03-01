@@ -50,7 +50,7 @@ var removeGroup = function() {
     groupLabeler.run(groupStageContainer);
 };
 
-var onButtonClick = function(event) {
+var addGroup = function(event) {
     var creationStage = event.target.closest(".creation-stage");
     var groupStageContainer = creationStage.querySelectorAll(".group-stage-container");
 
@@ -95,6 +95,6 @@ var onButtonClick = function(event) {
 window.addEventListener("load", function(event) {
     var buttons = document.querySelectorAll(".creation-control-panel-button");
     for (var index = 0; index < buttons.length; index++) {
-        buttons[index].addEventListener("click", onButtonClick);
+        buttons[index].addEventListener("click", addGroup);
     }
 });
