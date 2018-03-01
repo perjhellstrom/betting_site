@@ -1,6 +1,11 @@
 @import url("base.css");
 @import url("group_stage.css");
 
+.creation-group-container {
+	display: flex;
+	flex-direction: column;
+}
+
 .creation-control-panel {
 	display: flex;
 	margin: 3px 0 3px 0;
@@ -16,4 +21,17 @@
 
 .creation-control-panel-button:hover {
 	background-color: lime;
+}
+
+.creation-remove-group-button {
+	align-self: flex-end;
+	background-size: contain;
+	background-image: url("../resources/close.png");
+	width: 20px;
+	height: 20px;
+}
+
+.creation-remove-group-button:hover {
+	background-color: rgba(0,0,0,.5);
+	background-blend-mode: multiply;
 }

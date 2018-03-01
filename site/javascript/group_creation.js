@@ -46,19 +46,44 @@ var getNextGroupLetter = function() {
     return groupLetter;
 };
 
+var fixGroupNames = function(groupStageContainer) {
+    groupsCreated = 0;
+    var nameHeaders = groupStageContainer.querySelectorAll(".group-header");
+    for (var index = 0; index < nameHeaders.length; index++) {
+        nameHeaders[index].innerText = "Group " + getNextGroupLetter();
+    }
+};
+
+var removeGroup = function() {
+    var groupStageContainer = this.closest(".group-stage-container");
+    groupStageContainer.removeChild(this.parentNode);
+    groupFrame = groupStageContainer.children[1];
+    fixGroupNames(groupStageContainer);
+};
+
 var onButtonClick = function(event) {
     var creationControlPanelElement = event.target.parentElement;
     var creationStage = creationControlPanelElement.parentElement;
     var groupStageContainerElement = creationStage.getElementsByClassName("group-stage-container")[0];
+    
 
-    var groupFrameElement = appendDivOn(groupStageContainerElement, "group-frame");
+    var groupContainer = appendDivOn(groupStageContainerElement, "creation-group-container");
+    var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button");
+    var groupFrameElement = appendDivOn(groupContainer, "group-frame");
+
+    removeGroupButton.onclick = removeGroup;
+
+    // Add right margin to whole group container instead of just group frame. This 
+    // will solve flex-end issue with removeGroupButton    
+    groupContainer.style.marginRight = "15px";
+    groupFrameElement.style.marginRight = "0";
 
     var nameHeader = appendDivOn(groupFrameElement, "group-header");
     var dateHeader = appendDivOn(groupFrameElement, "group-sub-header");
     var statusHeader = appendDivOn(groupFrameElement, "group-sub-header");
-    
+
     nameHeader.innerText = "Group " + getNextGroupLetter();
-    appendInputOn(dateHeader, "date");
+    appendInputOn(dateHeader, "date").style.marginRight = "4px";
     appendInputOn(dateHeader, "time");
     statusHeader.innerText = "Remaining: -";
 
