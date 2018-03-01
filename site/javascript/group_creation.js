@@ -40,6 +40,12 @@ var appendInputOn = function(parent, type) {
 
 var groupsCreated = 0;
 
+var getNextGroupLetter = function() {
+    var groupLetter = String.fromCharCode(groupsCreated + 97).toUpperCase();
+    groupsCreated += 1;
+    return groupLetter;
+};
+
 var onButtonClick = function(event) {
     var creationControlPanelElement = event.target.parentElement;
     var creationStage = creationControlPanelElement.parentElement;
@@ -50,11 +56,8 @@ var onButtonClick = function(event) {
     var nameHeader = appendDivOn(groupFrameElement, "group-header");
     var dateHeader = appendDivOn(groupFrameElement, "group-sub-header");
     var statusHeader = appendDivOn(groupFrameElement, "group-sub-header");
-
-    var groupLetter = String.fromCharCode(groupsCreated + 97).toUpperCase();
-    groupsCreated += 1;
-
-    nameHeader.innerText = "Group " + groupLetter;
+    
+    nameHeader.innerText = "Group " + getNextGroupLetter();
     appendInputOn(dateHeader, "date");
     appendInputOn(dateHeader, "time");
     statusHeader.innerText = "Remaining: -";
