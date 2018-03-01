@@ -23,9 +23,17 @@ $(document).on('blur','#editingElement', function(){
 });
 
 
-var appendElementOn = function(parent, selector) {
+var appendDivOn = function(parent, selector) {
     var element = document.createElement("div");
     element.setAttribute("class", selector);
+    parent.appendChild(element);
+    return element;
+};
+
+var appendInputOn = function(parent, type) {
+    var element = document.createElement("input");
+    element.setAttribute("type", type);
+    element.required = true;
     parent.appendChild(element);
     return element;
 };
@@ -37,27 +45,28 @@ var onButtonClick = function(event) {
     var creationStage = creationControlPanelElement.parentElement;
     var groupStageContainerElement = creationStage.getElementsByClassName("group-stage-container")[0];
 
-    var groupFrameElement = appendElementOn(groupStageContainerElement, "group-frame");
+    var groupFrameElement = appendDivOn(groupStageContainerElement, "group-frame");
 
-    var nameHeader = appendElementOn(groupFrameElement, "group-header");
-    var dateHeader = appendElementOn(groupFrameElement, "group-sub-header");
-    var statusHeader = appendElementOn(groupFrameElement, "group-sub-header");
+    var nameHeader = appendDivOn(groupFrameElement, "group-header");
+    var dateHeader = appendDivOn(groupFrameElement, "group-sub-header");
+    var statusHeader = appendDivOn(groupFrameElement, "group-sub-header");
 
     var groupLetter = String.fromCharCode(groupsCreated + 97).toUpperCase();
     groupsCreated += 1;
 
     nameHeader.innerText = "Group " + groupLetter;
-    dateHeader.innerText = "Date";
-    statusHeader.innerText = "-";
+    appendInputOn(dateHeader, "date");
+    appendInputOn(dateHeader, "time");
+    statusHeader.innerText = "Remaining: -";
 
     for (var i = 0; i < 4; i++) {
-        var playerRowContainer = appendElementOn(groupFrameElement, "group-player-row-container");
-        var playerRow = appendElementOn(playerRowContainer, "group-player-row");
+        var playerRowContainer = appendDivOn(groupFrameElement, "group-player-row-container");
+        var playerRow = appendDivOn(playerRowContainer, "group-player-row");
 
-        var rank = appendElementOn(playerRow, "group-player-rank");
-        var name = appendElementOn(playerRow, "group-player-name");
-        var score = appendElementOn(playerRow, "group-player-score");
-        var matches = appendElementOn(playerRow, "group-player-matches");
+        var rank = appendDivOn(playerRow, "group-player-rank");
+        var name = appendDivOn(playerRow, "group-player-name");
+        var score = appendDivOn(playerRow, "group-player-score");
+        var matches = appendDivOn(playerRow, "group-player-matches");
         
         rank.innerText = i + 1;
         name.innerText = "Player/Team";
