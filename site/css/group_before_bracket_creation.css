@@ -1,6 +1,14 @@
 @import url("base.css");
 @import url("group_stage.css");
 
+.creation-stage-container {
+	
+}
+
+.creation-stage {
+	
+}
+
 .creation-group-container {
 	display: flex;
 	flex-direction: column;
