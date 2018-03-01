@@ -74,7 +74,7 @@ var onButtonClick = function(event) {
     removeGroupButton.onclick = removeGroup;
 
     // Add right margin to whole group container instead of just group frame. This 
-    // will solve flex-end issue with removeGroupButton    
+    // will solve flex-end issue with removeGroupButton.
     groupContainer.style.marginRight = "15px";
     groupFrameElement.style.marginRight = "0";
 
