@@ -8,6 +8,12 @@
 
 .creation-control-panel {
 	display: flex;
+	flex-direction: column;
+	margin: 5px 0 5px 0;
+}
+
+.creation-control-panel-element {
+	display: flex;
 	margin: 3px 0 3px 0;
 }
 

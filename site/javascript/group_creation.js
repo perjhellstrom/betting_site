@@ -1,3 +1,4 @@
+
 var editedElement = null;
 
 var editText = function(){
@@ -22,6 +23,25 @@ $(document).on('blur','#editingElement', function(){
     editedElement.text(name);
 });
 
+function GroupLabeler() {
+    this.groupsCreated = 0;
+
+    this.getNextGroupLetter = function() {
+        var groupLetter = String.fromCharCode(this.groupsCreated + 97).toUpperCase();
+        this.groupsCreated += 1;
+        return groupLetter;
+    };
+
+    this.run = function(groupStageContainer) {
+        this.groupsCreated = 0;
+        var nameHeaders = groupStageContainer.querySelectorAll(".group-header");
+        for (var index = 0; index < nameHeaders.length; index++) {
+            nameHeaders[index].innerText = "Group " + this.getNextGroupLetter();
+        }
+    };
+}
+
+var groupLabeler = new GroupLabeler();
 
 var appendDivOn = function(parent, selector) {
     var element = document.createElement("div");
@@ -38,36 +58,20 @@ var appendInputOn = function(parent, type) {
     return element;
 };
 
-var groupsCreated = 0;
 
-var getNextGroupLetter = function() {
-    var groupLetter = String.fromCharCode(groupsCreated + 97).toUpperCase();
-    groupsCreated += 1;
-    return groupLetter;
-};
-
-var fixGroupNames = function(groupStageContainer) {
-    groupsCreated = 0;
-    var nameHeaders = groupStageContainer.querySelectorAll(".group-header");
-    for (var index = 0; index < nameHeaders.length; index++) {
-        nameHeaders[index].innerText = "Group " + getNextGroupLetter();
-    }
-};
 
 var removeGroup = function() {
     var groupStageContainer = this.closest(".group-stage-container");
     groupStageContainer.removeChild(this.parentNode);
     groupFrame = groupStageContainer.children[1];
-    fixGroupNames(groupStageContainer);
+    groupLabeler.run(groupStageContainer);
 };
 
 var onButtonClick = function(event) {
-    var creationControlPanelElement = event.target.parentElement;
-    var creationStage = creationControlPanelElement.parentElement;
-    var groupStageContainerElement = creationStage.getElementsByClassName("group-stage-container")[0];
-    
+    var creationStage = event.target.closest(".creation-stage");
+    var groupStageContainer = creationStage.querySelectorAll(".group-stage-container");
 
-    var groupContainer = appendDivOn(groupStageContainerElement, "creation-group-container");
+    var groupContainer = appendDivOn(groupStageContainer[0], "creation-group-container");
     var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button");
     var groupFrameElement = appendDivOn(groupContainer, "group-frame");
 
@@ -82,7 +86,6 @@ var onButtonClick = function(event) {
     var dateHeader = appendDivOn(groupFrameElement, "group-sub-header");
     var statusHeader = appendDivOn(groupFrameElement, "group-sub-header");
 
-    nameHeader.innerText = "Group " + getNextGroupLetter();
     appendInputOn(dateHeader, "date").style.marginRight = "4px";
     appendInputOn(dateHeader, "time");
     statusHeader.innerText = "Remaining: -";
@@ -102,6 +105,8 @@ var onButtonClick = function(event) {
         score.innerText = "-";
         matches.innerText = "-";
     }
+
+    groupLabeler.run(groupStageContainer[0]);
 };
 
 window.addEventListener("load", function(event) {
