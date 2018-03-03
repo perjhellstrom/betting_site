@@ -30,7 +30,4 @@ var addStage = function(event) {
     appendElementOn(creationStage, "div", "group-stage-container");
 };
 
-window.addEventListener("load", function(event) {
-    var addStageButton = document.getElementById("add-stage");
-    addStageButton.addEventListener("click", addStage);
-});
+addStage();
