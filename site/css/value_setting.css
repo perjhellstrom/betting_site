@@ -1,0 +1,33 @@
+
+.value-setting-container {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.value-setting-label {
+	text-align: center;
+	margin: 0 20px 0 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.value-setting-control-panel {
+	display: flex;
+	justify-content: center;
+	margin: 0 10px 0 10px;
+}
+
+.value-setting-control-panel-item {
+}
+
+.value-setting-control-panel-item img {
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.value-setting-control-panel-value {
+	font-size: 28px;
+	margin: 0 16px 0 16px;
+}

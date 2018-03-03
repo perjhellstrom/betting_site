@@ -31,15 +31,8 @@ var addStage = function() {
     var advancingPlayersPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
     var buttonPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
 
-    appendElementOn(playerPerGroupPanel, "label", "").innerText = "Players per group:";
-    var playersPerGroupInput = appendElementOn(playerPerGroupPanel, "input", "");
-    playersPerGroupInput.type = "number";
-    playersPerGroupInput.min = "0";
-
-    appendElementOn(advancingPlayersPanel, "label", "").innerText = "Advancing players:";
-    var advancingPlayersInput = appendElementOn(advancingPlayersPanel, "input", "");
-    advancingPlayersInput.type = "number";
-    advancingPlayersInput.min = "0";
+    createValueSettingOn(playerPerGroupPanel, "Players Per Group", 4);
+    createValueSettingOn(advancingPlayersPanel, "Advancing Players", 1);
 
     var addGroupButton = appendElementOn(buttonPanel, "div", "creation-stage-button green-button");
     addGroupButton.innerText = "Add Group";
