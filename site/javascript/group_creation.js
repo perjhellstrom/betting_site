@@ -1,27 +1,22 @@
 
-var editedElement = null;
-
 var editText = function(){
-    editedElement = $(this);
-    var name = editedElement.text();
-    editedElement.html('');
-    $('<input></input>')
-        .attr({
-            'type': 'text',
-            'name': 'fname',
-            'id': 'editingElement',
-            'value': name
-        })
-        .appendTo(editedElement);
-    $('#editingElement').focus();
-}
+    var currentName = this.innerText;
+    this.innerHTML = "";
 
-$('#fullname').click(editText);
+    var input = document.createElement("input");
+    //input.setAttribute("class", "background-color: red;");
+    input.setAttribute("type", "text");
+    input.setAttribute("value", currentName);
+    this.appendChild(input);
 
-$(document).on('blur','#editingElement', function(){
-    var name = $(this).val();
-    editedElement.text(name);
-});
+    input.focus();
+    input.onblur = function() {
+        var editedEntry = this.parentNode;
+        var newEntryName = this.value;
+        editedEntry.innerHTML = "";
+        editedEntry.innerText = newEntryName;
+    };
+};
 
 function GroupLabeler() {
     this.groupsCreated = 0;

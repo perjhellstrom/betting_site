@@ -41,3 +41,16 @@
 	flex-basis: 1 1 auto;
 	margin-top: 6px;
 }
+
+.group-player-name input[type=text] {
+    border:2px solid #ccc;
+    width: 100%;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.group-player-name input[type=text]:focus {
+    width: 100%;
+    border-color:#333;
+}
+
