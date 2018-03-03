@@ -1,6 +1,21 @@
 
-var removeStage = function() { 
+var fixStageNames = function(creationStageContainer) {
+    var creationStageHeaders = creationStageContainer.querySelectorAll(".creation-stage-header");
+    console.log(creationStageHeaders);
+    for (var index = 0; index < creationStageHeaders.length; index++) {
+        creationStageHeaders[index].innerText = "Group Stage " + (index + 1);
+    }
+}
 
+var removeStage = function() { 
+    if (window.confirm("Do you really want to remove group stage?")) {
+        var creationStage = this.closest(".creation-stage");
+        var creationStageContainer = creationStage.parentNode;
+        if (creationStageContainer.children.length > 1) {
+            creationStageContainer.removeChild(creationStage);
+        }
+        fixStageNames(creationStageContainer);
+    }
 }
 
 var addStage = function() {
