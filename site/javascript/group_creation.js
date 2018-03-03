@@ -99,8 +99,3 @@ var addGroup = function(event) {
 
     groupLabeler.run(groupStageContainer[0]);
 };
-
-window.addEventListener("load", function(event) {
-    var addGroupButton = document.getElementById("add-group-button");
-    addGroupButton.addEventListener("click", addGroup);
-});
