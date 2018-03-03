@@ -23,7 +23,7 @@ var addStage = function(event) {
     advancingPlayersInput.type = "number";
     advancingPlayersInput.min = "0";
 
-    var addGroupButton = appendElementOn(addGroupElement, "div", "green-button no-select");
+    var addGroupButton = appendElementOn(addGroupElement, "div", "green-button");
     addGroupButton.innerText = "Add group";
     addGroupButton.onclick = addGroup;
 
