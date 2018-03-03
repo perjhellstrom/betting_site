@@ -1,22 +1,5 @@
 
-var editText = function(){
-    var currentName = this.innerText;
-    this.innerHTML = "";
-
-    var input = document.createElement("input");
-    //input.setAttribute("class", "background-color: red;");
-    input.setAttribute("type", "text");
-    input.setAttribute("value", currentName);
-    this.appendChild(input);
-
-    input.focus();
-    input.onblur = function() {
-        var editedEntry = this.parentNode;
-        var newEntryName = this.value;
-        editedEntry.innerHTML = "";
-        editedEntry.innerText = newEntryName;
-    };
-};
+var defaultEntryName = "Player/Team";
 
 function GroupLabeler() {
     this.groupsCreated = 0;
@@ -43,6 +26,27 @@ var removeGroup = function() {
     groupStageContainer.removeChild(this.parentNode);
     groupFrame = groupStageContainer.children[1];
     groupLabeler.run(groupStageContainer);
+};
+
+var attemptInnerTextClear = function(event) {
+    if (event.target.innerText === defaultEntryName) {
+        event.target.innerText = "";
+    }
+}
+
+var focusOnNextNameEntry = function(event) { 
+    if (event.keyCode === 13) {
+        var groupPlayerRowContainer = this.closest(".group-player-row-container");
+        var nextElementSibling = groupPlayerRowContainer.nextElementSibling;
+        console.log(nextElementSibling);
+        if (nextElementSibling === null) {
+            this.blur();
+        } else {
+            var groupPlayerName = nextElementSibling.querySelectorAll(".group-player-name")[0];
+            groupPlayerName.focus();
+        }
+        return false;
+    }
 };
 
 var addGroup = function(event) {
@@ -79,10 +83,14 @@ var addGroup = function(event) {
         var name = appendDivOn(playerRow, "group-player-name");
         var score = appendDivOn(playerRow, "group-player-score");
         var matches = appendDivOn(playerRow, "group-player-matches");
-        
+
+        name.setAttribute("contenteditable", "true");
+        name.innerText = defaultEntryName;
+        name.onclick = attemptInnerTextClear;
+        name.onfocus = attemptInnerTextClear;
+        name.onkeydown = focusOnNextNameEntry;
+
         rank.innerText = i + 1;
-        name.innerText = "Player/Team";
-        name.onclick = editText;
         score.innerText = "-";
         matches.innerText = "-";
     }
