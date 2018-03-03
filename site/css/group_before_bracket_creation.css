@@ -38,14 +38,6 @@
 }
 
 .creation-remove-group-button {
-	align-self: flex-end;
-	background-size: contain;
-	background-image: url("../resources/close.png");
-	width: 20px;
-	height: 20px;
-}
-
-.creation-remove-group-button:hover {
-	background-color: rgba(0,0,0,.5);
-	background-blend-mode: multiply;
+	flex-basis: 1 1 auto;
+	margin-top: 6px;
 }

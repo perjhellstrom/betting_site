@@ -55,15 +55,18 @@ var addGroup = function(event) {
     var groupStageContainer = creationStage.querySelectorAll(".group-stage-container");
 
     var groupContainer = appendDivOn(groupStageContainer[0], "creation-group-container");
-    var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button");
     var groupFrameElement = appendDivOn(groupContainer, "group-frame");
+    var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button red-button no-select");
 
+    removeGroupButton.innerText = "Remove Group";
     removeGroupButton.onclick = removeGroup;
 
-    // Add right margin to whole group container instead of just group frame. This 
-    // will solve flex-end issue with removeGroupButton.
+    // Add margin to whole group container instead of just group frame. This 
+    // will solve alignment issue with removeGroupButton.
     groupContainer.style.marginRight = "15px";
+    groupContainer.style.marginBottom = "15px";
     groupFrameElement.style.marginRight = "0";
+    groupFrameElement.style.marginBottom = "0";
 
     var nameHeader = appendDivOn(groupFrameElement, "group-header");
     var dateHeader = appendDivOn(groupFrameElement, "group-sub-header");
