@@ -22,10 +22,12 @@ function GroupLabeler() {
 var groupLabeler = new GroupLabeler();
 
 var removeGroup = function() {
-    var groupStageContainer = this.closest(".group-stage-container");
-    groupStageContainer.removeChild(this.parentNode);
-    groupFrame = groupStageContainer.children[1];
-    groupLabeler.run(groupStageContainer);
+    if (window.confirm("Do you really want to remove group?")) {
+        var groupStageContainer = this.closest(".group-stage-container");
+        groupStageContainer.removeChild(this.parentNode);
+        groupFrame = groupStageContainer.children[1];
+        groupLabeler.run(groupStageContainer);
+    }
 };
 
 var attemptInnerTextClear = function(event) {
