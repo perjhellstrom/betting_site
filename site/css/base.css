@@ -13,12 +13,27 @@
 }
 
 .red-button,
-.green-button {
+.green-button,
+.blue-button,
+.orange-button {
 	text-align: center;
 	padding: 4px 8px 4px 8px;
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 5px;
+}
+
+.red-button {
+	background-color: #ffc7ce;
+	color: #ad2933;
+	border-color: #ad2933;
+}
+
+.red-button:hover {
+	background-blend-mode: multiply;
+	background-color: #ff667a;
+	color: #000;
+	border-color: #000;
 }
 
 .green-button {
@@ -34,15 +49,28 @@
 	border-color: #000;
 }
 
-.red-button {
-	background-color: #ffc7ce;
-	color: #ad2933;
-	border-color: #ad2933;
+.blue-button {
+	background-color: #c7ceff;
+	color: #1a507e;
+	border-color: #1a507e;
 }
 
-.red-button:hover {
+.blue-button:hover {
 	background-blend-mode: multiply;
-	background-color: #ff667a;
+	background-color: #5e78ed;
+	color: #000;
+	border-color: #000;
+}
+
+.orange-button {
+	background-color: #FFC166;
+	color: #913A00;
+	border-color: #913A00;
+}
+
+.orange-button:hover {
+	background-blend-mode: multiply;
+	background-color: #FF9400;
 	color: #000;
 	border-color: #000;
 }
