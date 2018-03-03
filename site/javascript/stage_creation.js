@@ -1,5 +1,5 @@
 
-var addStage = function(event) {
+var addStage = function() {
     var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
     
