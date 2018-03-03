@@ -96,8 +96,6 @@ var addGroup = function(event) {
 };
 
 window.addEventListener("load", function(event) {
-    var buttons = document.querySelectorAll(".creation-control-panel-button");
-    for (var index = 0; index < buttons.length; index++) {
-        buttons[index].addEventListener("click", addGroup);
-    }
+    var addGroupButton = document.getElementById("add-group-button");
+    addGroupButton.addEventListener("click", addGroup);
 });
