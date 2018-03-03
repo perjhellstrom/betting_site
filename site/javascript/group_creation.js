@@ -22,11 +22,13 @@ function GroupLabeler() {
 var groupLabeler = new GroupLabeler();
 
 var removeGroup = function() {
-    if (window.confirm("Do you really want to remove group?")) {
-        var groupStageContainer = this.closest(".group-stage-container");
-        groupStageContainer.removeChild(this.parentNode);
-        groupFrame = groupStageContainer.children[1];
-        groupLabeler.run(groupStageContainer);
+    var groupStageContainer = this.closest(".group-stage-container");
+    if (groupStageContainer.children.length > 1) {
+        if (window.confirm("Do you really want to remove group?")) {
+            groupStageContainer.removeChild(this.parentNode);
+            groupFrame = groupStageContainer.children[1];
+            groupLabeler.run(groupStageContainer);
+        }
     }
 };
 
