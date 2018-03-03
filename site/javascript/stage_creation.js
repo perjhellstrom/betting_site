@@ -1,4 +1,8 @@
 
+var removeStage = function() { 
+
+}
+
 var addStage = function() {
     var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
@@ -12,6 +16,7 @@ var addStage = function() {
     var playersPerGroupElement = appendElementOn(creationControlPanel, "div", "creation-control-panel-element");
     var advancingPlayersElement = appendElementOn(creationControlPanel, "div", "creation-control-panel-element");
     var addGroupElement = appendElementOn(creationControlPanel, "div", "creation-control-panel-element");
+    var removeStageElement = appendElementOn(creationControlPanel, "div", "creation-control-panel-element");
 
     appendElementOn(playersPerGroupElement, "label", "").innerText = "Players per group:";
     var playersPerGroupInput = appendElementOn(playersPerGroupElement, "input", "");
@@ -26,6 +31,10 @@ var addStage = function() {
     var addGroupButton = appendElementOn(addGroupElement, "div", "green-button");
     addGroupButton.innerText = "Add Group";
     addGroupButton.onclick = addGroup;
+
+    var removeStageButton = appendElementOn(removeStageElement, "div", "red-button");
+    removeStageButton.innerText = "Remove Stage";
+    removeStageButton.onclick = removeStage;
 
     appendElementOn(creationStage, "div", "group-stage-container");
 };
