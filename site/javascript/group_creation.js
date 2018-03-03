@@ -55,7 +55,7 @@ var addGroup = function(event) {
 
     var groupContainer = appendDivOn(groupStageContainer[0], "creation-group-container");
     var groupFrameElement = appendDivOn(groupContainer, "group-frame");
-    var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button red-button no-select");
+    var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button red-button");
 
     removeGroupButton.innerText = "Remove Group";
     removeGroupButton.onclick = removeGroup;
