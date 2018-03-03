@@ -42,7 +42,6 @@ var focusOnNextNameEntry = function(event) {
     if (event.keyCode === 13) {
         var groupPlayerRowContainer = this.closest(".group-player-row-container");
         var nextElementSibling = groupPlayerRowContainer.nextElementSibling;
-        console.log(nextElementSibling);
         if (nextElementSibling === null) {
             this.blur();
         } else {
