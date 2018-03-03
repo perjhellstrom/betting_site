@@ -20,15 +20,14 @@
 	flex-direction: column;
 }
 
-.creation-control-panel {
+.creation-control-panel,
+.creation-control-panel-column {
 	display: flex;
-	flex-direction: column;
 	margin: 5px 0 5px 0;
 }
 
-.creation-control-panel-element {
-	display: flex;
-	margin: 3px 0 3px 0;
+.creation-control-panel-column {
+	flex-direction: column;
 }
 
 .creation-control-panel-button {
@@ -44,8 +43,12 @@
 }
 
 .creation-remove-group-button {
-	flex-basis: 1 1 auto;
-	margin-top: 6px;
+	flex-basis: 0 0 auto;
+	margin-top: 5px;
+}
+
+.creation-stage-button {
+	margin-right: 5px;
 }
 
 .group-player-name input[type=text] {
