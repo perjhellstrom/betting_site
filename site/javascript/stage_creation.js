@@ -8,10 +8,10 @@ var fixStageNames = function(creationStageContainer) {
 }
 
 var removeStage = function() { 
-    if (window.confirm("Do you really want to remove group stage?")) {
-        var creationStage = this.closest(".creation-stage");
-        var creationStageContainer = creationStage.parentNode;
-        if (creationStageContainer.children.length > 1) {
+    var creationStage = this.closest(".creation-stage");
+    var creationStageContainer = creationStage.parentNode;
+    if (creationStageContainer.children.length > 1) {
+        if (window.confirm("Do you really want to remove group stage?")) {
             creationStageContainer.removeChild(creationStage);
         }
         fixStageNames(creationStageContainer);
