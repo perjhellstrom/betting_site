@@ -32,7 +32,7 @@ var attemptInnerTextClear = function(event) {
     if (event.target.innerText === defaultEntryName) {
         event.target.innerText = "";
     }
-}
+};
 
 var focusOnNextNameEntry = function(event) { 
     if (event.keyCode === 13) {
