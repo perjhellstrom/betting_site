@@ -50,6 +50,10 @@ var addStage = function() {
     removeStageButton.onclick = removeStage;
 
     appendElementOn(creationStage, "div", "group-stage-container");
+
+    // Click the add group button to always have at least one group present in 
+    // every group stage
+    addGroupButton.click();
 };
 
 window.addEventListener("load", function(event) {
