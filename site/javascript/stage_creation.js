@@ -24,7 +24,7 @@ var addStage = function(event) {
     advancingPlayersInput.min = "0";
 
     var addGroupButton = appendElementOn(addGroupElement, "div", "green-button");
-    addGroupButton.innerText = "Add group";
+    addGroupButton.innerText = "Add Group";
     addGroupButton.onclick = addGroup;
 
     appendElementOn(creationStage, "div", "group-stage-container");
