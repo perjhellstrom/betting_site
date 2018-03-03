@@ -8,9 +8,8 @@ var addStage = function() {
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
     
     var creationStage = appendElementOn(creationStageContainer, "div", "creation-stage");
-    var creationHeaderSection = appendElementOn(creationStage, "section", "");
-    var header = appendElementOn(creationHeaderSection, "h3", "");
-    header.innerText = "Group Stage " + creationStageContainer.children.length;
+    var creationStageHeader = appendElementOn(creationStage, "div", "creation-stage-header");
+    creationStageHeader.innerText = "Group Stage " + creationStageContainer.children.length;
 
     var creationControlPanel = appendElementOn(creationStage, "div", "creation-control-panel");
     var playersPerGroupElement = appendElementOn(creationControlPanel, "div", "creation-control-panel-element");
