@@ -20,3 +20,8 @@ var appendInputOn = function(parent, type) {
     parent.appendChild(element);
     return element;
 };
+
+var getElementsWithinParent = function(elementOrigin, parentSelector, targetSelector) {
+    var parent = elementOrigin.closest(parentSelector);
+    return parent.querySelectorAll(targetSelector);
+};
