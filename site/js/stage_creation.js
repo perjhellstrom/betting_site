@@ -31,6 +31,7 @@ var playersPerGroupCallback = function(element, value) {
             } else if (currentContainer.children.length < value) {
                 addPlayerRow(currentContainer);
             }
+            fixGroupBottomBorder(currentContainer);
         }
     }
     return value;

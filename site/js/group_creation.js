@@ -75,6 +75,18 @@ var getPlayerAmountInFirstGroup = function(groupStageContainer) {
     return playersInGroup;
 };
 
+var fixGroupBottomBorder = function(playerRowContainer) {
+    for (var index = 0; index < playerRowContainer.children.length - 1; index++) {
+        var playerRow = playerRowContainer.children[index];
+        playerRow.firstChild.style.borderRadius = "0";
+        playerRow.lastChild.style.borderRadius = "0";
+    }
+
+    var lastPlayerRow = playerRowContainer.lastChild;
+    lastPlayerRow.firstChild.style.borderRadius = "0 0 0 5px";
+    lastPlayerRow.lastChild.style.borderRadius = "0 0 5px 0";
+};
+
 var addPlayerRow = function(parentContainer) {
     var playerRow = appendDivOn(parentContainer, "group-player-row");
     var rank = appendDivOn(playerRow, "group-player-rank");
@@ -131,6 +143,7 @@ var addGroup = function(event) {
     for (var index = 0; index < playersInGroup; index++) {
         addPlayerRow(playerRowContainer);
     }
+    fixGroupBottomBorder(playerRowContainer);
 
     groupLabeler.run(groupStageContainer);
 };
