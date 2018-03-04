@@ -56,7 +56,7 @@ var validateEntryName = function(event) {
 
 var focusOnNextNameEntry = function(event) { 
     if (event.keyCode === 13) {
-        var groupPlayerRowContainer = this.closest(".group-player-row-container");
+        var groupPlayerRowContainer = this.closest(".group-player-row");
         var nextElementSibling = groupPlayerRowContainer.nextElementSibling;
         if (nextElementSibling === null) {
             this.blur();
