@@ -29,5 +29,6 @@
 
 .value-setting-control-panel-value {
 	font-size: 28px;
-	margin: 0 16px 0 16px;
+	text-align: center;
+	flex-basis: 48px;
 }
