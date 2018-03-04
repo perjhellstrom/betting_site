@@ -36,6 +36,26 @@ var playersPerGroupCallback = function(element, value) {
     return value;
 }
 
+var advancingPlayersCallback = function(element, value) {
+    var min = 1;
+    var max = Number.MAX_VALUE;
+
+    var valueSettingContainers = getElementsWithinParent(element, ".creation-stage", ".value-setting-container");
+    for (var index = 0; index < valueSettingContainers.length; index++) {
+        var valueSettingLabel = valueSettingContainers[index].firstChild;
+        if (valueSettingLabel.innerText === "Players Per Group") {
+            max = Number(valueSettingContainers[index].children[1].innerText) - 1;
+        }
+    }
+
+    if (value > max) {
+        return max;
+    } else if (value < min) {
+        return min;
+    }
+    return value;
+}
+
 var addStage = function() {
     var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
@@ -50,7 +70,7 @@ var addStage = function() {
     var buttonPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
 
     createValueSettingOn(playerPerGroupPanel, "Players Per Group", 4, "playersPerGroupCallback", "playersPerGroupCallback");
-    createValueSettingOn(advancingPlayersPanel, "Advancing Players", 1);
+    createValueSettingOn(advancingPlayersPanel, "Advancing Players", 1, "advancingPlayersCallback", "advancingPlayersCallback");
 
     var addGroupButton = appendElementOn(buttonPanel, "div", "creation-stage-button green-button");
     addGroupButton.innerText = "Add Group";
