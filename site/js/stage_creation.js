@@ -65,9 +65,9 @@ var addStage = function() {
     creationStageHeader.innerText = "Group Stage " + creationStageContainer.children.length;
 
     var creationControlPanelColumn = appendElementOn(creationStage, "div", "creation-control-panel-column");
+    var buttonPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
     var playerPerGroupPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
     var advancingPlayersPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
-    var buttonPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
 
     createValueSettingOn(playerPerGroupPanel, "Players Per Group", 4, "playersPerGroupCallback", "playersPerGroupCallback");
     createValueSettingOn(advancingPlayersPanel, "Advancing Players", 1, "advancingPlayersCallback", "advancingPlayersCallback");
