@@ -38,6 +38,22 @@ var attemptInnerTextClear = function(event) {
     }
 };
 
+var validateEntryName = function(event) {
+    var entryName = event.target;
+
+    // Do not allow newlines in entry names
+    entryName.innerText = entryName.innerText.replace("\n", "");
+
+    // Add default entry name if left empty or only contains whitespace
+    // ... Feels like magic
+    if ((/\S/).test(entryName.innerText) == false) {
+        entryName.innerText = defaultEntryName;
+    }
+
+    // Remove leading and trailing spaces
+    entryName.innerText = entryName.innerText.trim();
+};
+
 var focusOnNextNameEntry = function(event) { 
     if (event.keyCode === 13) {
         var groupPlayerRowContainer = this.closest(".group-player-row-container");
@@ -68,9 +84,10 @@ var addPlayerRow = function(parentContainer) {
 
     name.setAttribute("contenteditable", "true");
     name.innerText = defaultEntryName;
+    name.onkeydown = focusOnNextNameEntry;
     name.onclick = attemptInnerTextClear;
     name.onfocus = attemptInnerTextClear;
-    name.onkeydown = focusOnNextNameEntry;
+    name.onblur = validateEntryName;
 
     rank.innerText = parentContainer.children.length;
     score.innerText = "-";
