@@ -52,11 +52,37 @@ var focusOnNextNameEntry = function(event) {
     }
 };
 
+var getPlayerAmountInFirstGroup = function(groupStageContainer) {
+    var firstGroupStageContainer = groupStageContainer.firstChild;
+    var groupPlayerRowContainers = firstGroupStageContainer.querySelectorAll(".group-player-row-container");
+    var playersInGroup = groupPlayerRowContainers[0].children.length;
+    return playersInGroup;
+};
+
+var addPlayerRow = function(parentContainer) {
+    var playerRow = appendDivOn(parentContainer, "group-player-row");
+    var rank = appendDivOn(playerRow, "group-player-rank");
+    var name = appendDivOn(playerRow, "group-player-name");
+    var score = appendDivOn(playerRow, "group-player-score");
+    var matches = appendDivOn(playerRow, "group-player-matches");
+
+    name.setAttribute("contenteditable", "true");
+    name.innerText = defaultEntryName;
+    name.onclick = attemptInnerTextClear;
+    name.onfocus = attemptInnerTextClear;
+    name.onkeydown = focusOnNextNameEntry;
+
+    rank.innerText = parentContainer.children.length;
+    score.innerText = "-";
+    matches.innerText = "-";
+};
+
 var addGroup = function(event) {
     var creationStage = event.target.closest(".creation-stage");
-    var groupStageContainer = creationStage.querySelectorAll(".group-stage-container");
+    var groupStageContainers = creationStage.querySelectorAll(".group-stage-container");
+    var groupStageContainer = groupStageContainers[0];
 
-    var groupContainer = appendDivOn(groupStageContainer[0], "creation-group-container");
+    var groupContainer = appendDivOn(groupStageContainer, "creation-group-container");
     var groupFrameElement = appendDivOn(groupContainer, "group-frame");
     var removeGroupButton = appendDivOn(groupContainer, "creation-remove-group-button red-button");
 
@@ -78,25 +104,16 @@ var addGroup = function(event) {
     appendInputOn(dateHeader, "time");
     statusHeader.innerText = "Remaining: -";
 
-    for (var i = 0; i < 4; i++) {
-        var playerRowContainer = appendDivOn(groupFrameElement, "group-player-row-container");
-        var playerRow = appendDivOn(playerRowContainer, "group-player-row");
-
-        var rank = appendDivOn(playerRow, "group-player-rank");
-        var name = appendDivOn(playerRow, "group-player-name");
-        var score = appendDivOn(playerRow, "group-player-score");
-        var matches = appendDivOn(playerRow, "group-player-matches");
-
-        name.setAttribute("contenteditable", "true");
-        name.innerText = defaultEntryName;
-        name.onclick = attemptInnerTextClear;
-        name.onfocus = attemptInnerTextClear;
-        name.onkeydown = focusOnNextNameEntry;
-
-        rank.innerText = i + 1;
-        score.innerText = "-";
-        matches.innerText = "-";
+    var playersInGroup = 4;
+    var groupAmount = groupStageContainer.children.length;
+    if (groupAmount > 1) {
+        playersInGroup = getPlayerAmountInFirstGroup(groupStageContainer);
     }
 
-    groupLabeler.run(groupStageContainer[0]);
+    var playerRowContainer = appendDivOn(groupFrameElement, "group-player-row-container");
+    for (var index = 0; index < playersInGroup; index++) {
+        addPlayerRow(playerRowContainer);
+    }
+
+    groupLabeler.run(groupStageContainer);
 };

@@ -18,6 +18,24 @@ var removeStage = function() {
     }
 }
 
+var playersPerGroupCallback = function(element, value) {
+    if (value < 2) {
+        value = 2;
+    }
+    var groupPlayerRowContainers = getElementsWithinParent(element, ".creation-stage", ".group-player-row-container");
+    for (var containerIndex = 0; containerIndex < groupPlayerRowContainers.length; containerIndex++) {
+        var currentContainer = groupPlayerRowContainers[containerIndex];
+        while (currentContainer.children.length !== value) {
+            if (currentContainer.children.length > value) {
+                currentContainer.removeChild(currentContainer.lastChild);
+            } else if (currentContainer.children.length < value) {
+                addPlayerRow(currentContainer);
+            }
+        }
+    }
+    return value;
+}
+
 var addStage = function() {
     var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
@@ -31,7 +49,7 @@ var addStage = function() {
     var advancingPlayersPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
     var buttonPanel = appendElementOn(creationControlPanelColumn, "div", "creation-control-panel");
 
-    createValueSettingOn(playerPerGroupPanel, "Players Per Group", 4);
+    createValueSettingOn(playerPerGroupPanel, "Players Per Group", 4, "playersPerGroupCallback", "playersPerGroupCallback");
     createValueSettingOn(advancingPlayersPanel, "Advancing Players", 1);
 
     var addGroupButton = appendElementOn(buttonPanel, "div", "creation-stage-button green-button");
