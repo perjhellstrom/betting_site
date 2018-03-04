@@ -1,17 +1,26 @@
+
+
+var changeValue = function(element, delta) {
+    var valueSettingControlPanelValue = element.parentNode.querySelectorAll(".value-setting-control-panel-value")[0];
+    var newValue = Number(valueSettingControlPanelValue.innerText) + delta;
+
+    if (element.hasAttribute("data-callback")) {
+        var callbackId = element.getAttribute("data-callback");
+        newValue = window[callbackId](element, newValue);
+    }
+    
+    valueSettingControlPanelValue.innerText = newValue;
+};
+
 var increaseValue = function() {
-    var valueSettingControlPanelValue = this.parentNode.querySelectorAll(".value-setting-control-panel-value")[0];
-    valueSettingControlPanelValue.innerText = Number(valueSettingControlPanelValue.innerText) + 1;
+    changeValue(this, 1);
 };
 
 var decreaseValue = function() {
-    var valueSettingControlPanelValue = this.parentNode.querySelectorAll(".value-setting-control-panel-value")[0];
-    var currentValue = Number(valueSettingControlPanelValue.innerText);
-    if (currentValue > 1) {
-        valueSettingControlPanelValue.innerText = currentValue - 1;    
-    }    
+    changeValue(this, -1);
 };
 
-var createValueSettingOn = function(parent, label, initialValue) {
+var createValueSettingOn = function(parent, label, initialValue, increaseCB="", decreaseCB="") {
     var valueSettingContainer = appendElementOn(parent, "div", "value-setting-container");
 
     appendElementOn(valueSettingContainer, "div", "value-setting-label").innerText = label;
@@ -33,4 +42,11 @@ var createValueSettingOn = function(parent, label, initialValue) {
 
     valueSettingControlPanelIncrease.onclick = increaseValue;
     valueSettingControlPanelDecrease.onclick = decreaseValue;
+
+    if(increaseCB !== "") {
+        valueSettingControlPanelIncrease.setAttribute("data-callback", increaseCB);
+    }
+    if(decreaseCB !== "") {
+        valueSettingControlPanelDecrease.setAttribute("data-callback", decreaseCB);
+    }
 };
