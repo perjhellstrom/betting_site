@@ -53,10 +53,6 @@ p {
     margin-left: 20px;
     padding: 10px 10px 10px 10px;
     background-color: #888;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 .tab,
