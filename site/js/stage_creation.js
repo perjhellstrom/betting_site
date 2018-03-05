@@ -1,3 +1,13 @@
+var getValueSettingValueWithinStage = function(creationStage, label) {
+    var valueSettingContainers = creationStage.querySelectorAll(".value-setting-container");
+    for (var index = 0; index < valueSettingContainers.length; index++) {
+        var valueSettingLabel = valueSettingContainers[index].firstChild;
+        if (valueSettingLabel.innerText === label) {
+            return Number(valueSettingContainers[index].children[1].innerText);
+        }
+    }
+    return -1;
+};
 
 var fixStageNames = function(creationStageContainer) {
     var creationStageHeaders = creationStageContainer.querySelectorAll(".creation-stage-header");
