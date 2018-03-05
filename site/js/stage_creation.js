@@ -51,12 +51,10 @@ var advancingPlayersCallback = function(element, value) {
     var min = 1;
     var max = Number.MAX_VALUE;
 
-    var valueSettingContainers = getElementsWithinParent(element, ".creation-stage", ".value-setting-container");
-    for (var index = 0; index < valueSettingContainers.length; index++) {
-        var valueSettingLabel = valueSettingContainers[index].firstChild;
-        if (valueSettingLabel.innerText === "Players Per Group") {
-            max = Number(valueSettingContainers[index].children[1].innerText) - 1;
-        }
+    var creationStage = element.closest(".creation-stage");
+    var valueSettingValue = getValueSettingValueWithinStage(creationStage, "Players Per Group");
+    if (valueSettingValue !== -1) {
+        max = valueSettingValue - 1;
     }
 
     if (value > max) {
