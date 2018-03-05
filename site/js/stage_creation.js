@@ -91,6 +91,12 @@ var addStage = function() {
 
     appendElementOn(creationStage, "div", "group-stage-container");
 
+
+    var issueHeader = appendElementOn(creationStage, "div", "creation-stage-header");
+    issueHeader.innerText = "Stage Issues";
+    var issue = appendElementOn(creationStage, "div", "creation-issue");
+    issue.innerText = "* Does not work with previous stage";
+
     // Click the add group button to always have at least one group present in 
     // every group stage
     addGroupButton.click();

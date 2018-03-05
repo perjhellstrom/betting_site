@@ -56,6 +56,11 @@
 	margin-right: 5px;
 }
 
+.creation-issue {
+	font-style: italic;
+	color: red;
+}
+
 .group-player-name input[type=text] {
     border:2px solid #ccc;
     width: 100%;
