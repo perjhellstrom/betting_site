@@ -26,7 +26,6 @@ var removeGroup = function() {
     if (groupStageContainer.children.length > 1) {
         if (window.confirm("Do you really want to remove group?")) {
             groupStageContainer.removeChild(this.parentNode);
-            groupFrame = groupStageContainer.children[1];
             groupLabeler.run(groupStageContainer);
         }
     }
