@@ -25,3 +25,10 @@ var getElementsWithinParent = function(elementOrigin, parentSelector, targetSele
     var parent = elementOrigin.closest(parentSelector);
     return parent.querySelectorAll(targetSelector);
 };
+
+var removeAllChildElementsWithSelector = function(parent, targetSelector) {
+    var targetChildren = parent.querySelectorAll(targetSelector);
+    for (var index = 0; index < targetChildren.length; index++) {
+        parent.removeChild(targetChildren[index]);
+    }
+};
