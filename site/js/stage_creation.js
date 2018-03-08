@@ -28,11 +28,13 @@ var removeStage = function() {
     }
 }
 
-var playersPerGroupCallback = function(element, value) {
+var playersPerGroupCallback = function(element, target, value) {
     if (value < 2) {
         value = 2;
     }
-    var groupPlayerRowContainers = getElementsWithinParent(element, ".creation-stage", ".group-player-row-container");
+
+    var creationStage = element.closest(".creation-stage");
+    var groupPlayerRowContainers = creationStage.querySelectorAll(".group-player-row-container");
     for (var containerIndex = 0; containerIndex < groupPlayerRowContainers.length; containerIndex++) {
         var currentContainer = groupPlayerRowContainers[containerIndex];
         while (currentContainer.children.length !== value) {
@@ -44,10 +46,11 @@ var playersPerGroupCallback = function(element, value) {
             fixGroupBottomBorder(currentContainer);
         }
     }
-    return value;
+
+    target.innerText = value;
 }
 
-var advancingPlayersCallback = function(element, value) {
+var advancingPlayersCallback = function(element, target, value) {
     var min = 1;
     var max = Number.MAX_VALUE;
 
@@ -58,11 +61,12 @@ var advancingPlayersCallback = function(element, value) {
     }
 
     if (value > max) {
-        return max;
+        value = max;
     } else if (value < min) {
-        return min;
+        value = min;
     }
-    return value;
+
+    target.innerText = value;
 }
 
 var addStage = function() {

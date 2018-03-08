@@ -6,10 +6,8 @@ var changeValue = function(element, delta) {
 
     if (element.hasAttribute("data-callback")) {
         var callbackId = element.getAttribute("data-callback");
-        newValue = window[callbackId](element, newValue);
+        window[callbackId](element, valueSettingControlPanelValue, newValue);
     }
-    
-    valueSettingControlPanelValue.innerText = newValue;
 };
 
 var increaseValue = function() {
