@@ -48,6 +48,7 @@ var playersPerGroupCallback = function(element, target, value) {
     }
 
     target.innerText = value;
+    validateStage(creationStage);
 }
 
 var advancingPlayersCallback = function(element, target, value) {
@@ -67,6 +68,7 @@ var advancingPlayersCallback = function(element, target, value) {
     }
 
     target.innerText = value;
+    validateStage(creationStage);    
 }
 
 var addStage = function() {

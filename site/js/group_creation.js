@@ -25,8 +25,10 @@ var removeGroup = function() {
     var groupStageContainer = this.closest(".group-stage-container");
     if (groupStageContainer.children.length > 1) {
         if (window.confirm("Do you really want to remove group?")) {
+            var creationStage = this.closest(".creation-stage");
             groupStageContainer.removeChild(this.parentNode);
             groupLabeler.run(groupStageContainer);
+            validateStage(creationStage);
         }
     }
 };
@@ -145,4 +147,5 @@ var addGroup = function(event) {
     fixGroupBottomBorder(playerRowContainer);
 
     groupLabeler.run(groupStageContainer);
+    validateStage(creationStage);
 };
