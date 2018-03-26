@@ -71,7 +71,7 @@ var advancingPlayersCallback = function(element, target, value) {
     validateStage(creationStage);    
 }
 
-var addStage = function() {
+var addGroupStage = function() {
     var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
     
@@ -109,6 +109,6 @@ var addStage = function() {
 
 window.addEventListener("load", function(event) {
     var addStageButton = document.getElementById("add-stage");
-    addStageButton.addEventListener("click", addStage);
-    addStage();
+    addStageButton.addEventListener("click", addGroupStage);
+    addGroupStage();
 });
