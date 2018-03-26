@@ -52,14 +52,14 @@
 
 .group-player-row {
 	display: flex;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
 }
 
-.group-player-rank,
-.group-player-name,
-.group-player-score,
-.group-player-matches {
-	border-bottom: 1px solid gray;
-	border-right: 1px solid gray;
+.group-player-row:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .group-player-rank,
@@ -69,7 +69,6 @@
 }
 
 .group-player-rank {
-	border-left: 1px solid gray;
 	min-width: 32px;
 }
 
