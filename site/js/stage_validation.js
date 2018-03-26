@@ -22,7 +22,6 @@ var createIssueOn = function(creationStage, issueInformation) {
 var validateStage = function(creationStage) {
     let creationIssueContainers = creationStage.querySelectorAll(".creation-issue-container");
     removeAllChildElementsWithSelector(creationIssueContainers[0], ".creation-issue");
-    console.log("Issues removed!");
 
     var numEntriesInThisStage = getTotalEntriesInStage(creationStage);
     if (creationStage.previousSibling) {
