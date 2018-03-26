@@ -63,6 +63,12 @@
 }
 
 .group-player-rank,
+.group-player-name,
+.group-player-score {
+	border-right: 1px solid gray;
+}
+
+.group-player-rank,
 .group-player-score,
 .group-player-matches {
 	text-align: center;
