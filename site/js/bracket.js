@@ -164,9 +164,11 @@ var readScroll = function(event) {
 }
 
 var appendBracketTo = function(parent) {
-    removeAllChildElementsWithSelector(parent, ".creation-bracket-container");
-	bracketElement = appendElementOn(parent, "div", "creation-bracket-container");
-	
+	var asd = parent.querySelectorAll(".bracket-container")[0];
+
+    removeAllChildElementsWithSelector(asd, ".generated_bracket");
+	bracketElement = appendElementOn(asd, "div", "generated_bracket");
+
 	$(bracketElement).bracket({
 		init: bracketData, /* data to initialize the bracket with */
         //skipSecondaryFinal: true,
