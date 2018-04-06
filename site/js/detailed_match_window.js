@@ -91,13 +91,3 @@ var onScrollUpdate = function(event) {
 	detailedMatchWindow.scroll.left = document.documentElement.scrollLeft;
 	detailedMatchWindow.updatePositon();
 }
-
-window.addEventListener("load", function(event) {
-	var matches = document.querySelectorAll(".match");
-	for (var index = 0; index < matches.length; index++) {
-		matches[index].addEventListener("click", onMatchClick);
-	}
-});
-
-window.addEventListener("scroll", onScrollUpdate);
-window.addEventListener("resize", onScrollUpdate);

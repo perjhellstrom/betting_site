@@ -34,14 +34,3 @@ var onTabClick = function(event) {
     clickedTab.classList.add("tab-active");
     enablePage(activeTabId);
 }
-
-window.addEventListener("load", function(event) {
-    var tabs = document.querySelectorAll(".tab");
-    for (var index = 0; index < tabs.length; index++) {
-        tabs[index].addEventListener("click", onTabClick);
-    }
-
-    deactivateTabs();
-    disablePages();
-    enablePage("tournament-page");
-});

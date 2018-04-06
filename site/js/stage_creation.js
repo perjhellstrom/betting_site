@@ -106,9 +106,3 @@ var addGroupStage = function() {
     // every group stage
     addGroupButton.click();
 };
-
-window.addEventListener("load", function(event) {
-    var addStageButton = document.getElementById("add-stage");
-    addStageButton.addEventListener("click", addGroupStage);
-    addGroupStage();
-});
