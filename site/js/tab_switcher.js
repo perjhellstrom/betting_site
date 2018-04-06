@@ -22,11 +22,11 @@ var enablePage = function(tabId) {
 }
 
 var onTabClick = function(event) {
-    var clickedTab = event.target; 
+    var clickedTab = event.target;
+    
     if(clickedTab.id === activeTabId) {
         return;
     }
-
     activeTabId = clickedTab.id;
 
     deactivateTabs();
