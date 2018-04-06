@@ -72,7 +72,7 @@ var advancingPlayersCallback = function(element, target, value) {
 }
 
 var addGroupStage = function() {
-    var groupBeforeBracketPage = document.getElementById("group-before-bracket-page");
+    var groupBeforeBracketPage = document.getElementById("create-tournament-page");
     var creationStageContainer = groupBeforeBracketPage.querySelectorAll(".creation-stage-container")[0];
     
     var creationStage = appendElementOn(creationStageContainer, "div", "creation-stage");

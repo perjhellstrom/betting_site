@@ -163,12 +163,18 @@ var readScroll = function(event) {
 	detailedMatchWindow.updatePositon();
 }
 
-window.addEventListener("load", function(event) {
-	$("#bracket").bracket({
+var appendBracketTo = function(parent) {
+    removeAllChildElementsWithSelector(parent, ".creation-bracket-container");
+	bracketElement = appendElementOn(parent, "div", "creation-bracket-container");
+	
+	$(bracketElement).bracket({
 		init: bracketData, /* data to initialize the bracket with */
         //skipSecondaryFinal: true,
 		teamWidth: 80
 	});
+}
+
+window.addEventListener("load", function(event) {
 	var matches = document.querySelectorAll(".match");
 	for (var index = 0; index < matches.length; index++) {
 		matches[index].addEventListener("click", onMatchClick);

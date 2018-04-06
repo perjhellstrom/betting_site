@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="../css/better_table.css">
     <link rel="stylesheet" href="../css/group_stage.css">
     <link rel="stylesheet" href="../css/detailed_match.css">
-    <link rel="stylesheet" href="../css/bracket_only_creation.css">
-    <link rel="stylesheet" href="../css/group_before_bracket_creation.css">
+    <link rel="stylesheet" href="../css/create_tournament.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../packages/jquery_bracket/jquery.bracket.min.css">
     <script src="../js/jquery-3.3.1.js"></script>
@@ -24,13 +23,12 @@
         <nav class="navigation">
             <img src="../resources/logo.png" alt="Fett med både syra å fett med spray!">
             <div class="tab-container">
-                <div id="bracket-only-tab" class="tab no-select">Create Bracket Only</div>
-                <div id="group-before-bracket-tab" class="tab no-select">Create Group/Bracket</div>
+                <div id="tournament-tab" class="tab no-select">Tournament</div>
+                <div id="create-tournament-tab" class="tab no-select">Create Tournament</div>
                 <div id="forum-tab" class="tab no-select">Forum</div>
                 <div id="only-tacos-here-tab" class="tab no-select">Endast Tacos här</div>
             </div>
         </nav>
-        <script src="../js/page_switcher.js"></script>
         <div class="main">
             <div class="tournament-list-container">
                 <div class="tournament-list-item">Deltagande</div>
@@ -166,17 +164,13 @@
                                 </div>
                             </div>
                         </div>
-                        <script src="../js/player_highlighter.js"></script>
-                        <script src="../js/player_bet_window.js"></script>
                         <section>
                             <h2>Bracket</h2>
                         </section>
-                        <div id="bracket"></div>
                         <div id="detailed-match" class="detailed-match">
                             <div class="detailed-match-player"></div>
                             <div class="detailed-match-player"></div>
                         </div>
-                        <script src="../js/bracket.js"></script>
                     </div>
                     <div class="tournament-information">
                         <section>
@@ -189,7 +183,7 @@
             <div id="bracket-only-page" class="page">
                 Creating bracket only
             </div>
-            <div id="group-before-bracket-page" class="page">
+            <div id="create-tournament-page" class="page">
                 <div class="creation-control-panel-column">
                     <div class="creation-control-panel">
                         <label>Tournament Name:</label>
@@ -200,22 +194,27 @@
                         <input type="checkbox"></input>
                     </div>
                 </div>
-                <div class="creation-stage-container"></div>
                 <div class="creation-control-panel-column">
                     <div class="creation-control-panel">
                         <div id="add-stage" class="creation-stage-button blue-button">Add Stage</div>
                         <div id="create-tournament" class="creation-stage-button orange-button">Create tournament</div>
+                        <div id="clear-tournament" class="creation-stage-button red-button">Clear tournament</div>
                     </div>
                 </div>
-                <script src="../js/value_setting.js"></script>
-                <script src="../js/stage_validation.js"></script>
-                <script src="../js/group_creation.js"></script>
-                <script src="../js/stage_creation.js"></script>
+                <div class="creation-stage-container"></div>
             </div>
         </div>
         <footer class="footer">
             <p>Footer</p>
         </footer>
     </div>
+    <script src="../js/player_highlighter.js"></script>
+    <script src="../js/player_bet_window.js"></script>
+    <script src="../js/bracket.js"></script>
+    <script src="../js/value_setting.js"></script>
+    <script src="../js/stage_validation.js"></script>
+    <script src="../js/group_creation.js"></script>
+    <script src="../js/stage_creation.js"></script>
+    <script src="../js/page_switcher.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+var activeTabId = "";
+
 var deactivateTabs = function() {
     var tabs = document.querySelectorAll(".tab");
     for (var index = 0; index < tabs.length; index++) {
@@ -13,15 +15,24 @@ var disablePages = function() {
 };
 
 var enablePage = function(tabId) {
-    pageId = tabId.replace("tab", "page");
-    document.getElementById(pageId).style.display = "block";
+    var activePage = tabId.replace("tab", "page");
+    var pageElement = document.getElementById(activePage);
+    pageElement.style.display = "block";
+    appendBracketTo(pageElement)
 }
 
 var onTabClick = function(event) {
+    var clickedTab = event.target; 
+    if(clickedTab.id === activeTabId) {
+        return;
+    }
+
+    activeTabId = clickedTab.id;
+
     deactivateTabs();
     disablePages();
-    event.target.classList.add("tab-active");
-    enablePage(event.target.id);
+    clickedTab.classList.add("tab-active");
+    enablePage(activeTabId);
 }
 
 window.addEventListener("load", function(event) {
@@ -32,5 +43,5 @@ window.addEventListener("load", function(event) {
 
     deactivateTabs();
     disablePages();
-    document.getElementById("tournament-page").style.display = "block";
+    enablePage("tournament-page");
 });

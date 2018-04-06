@@ -60,6 +60,10 @@
 	
 }
 
+.creation-bracket-container {
+	overflow: auto;
+}
+
 .creation-issue {
 	font-style: italic;
 	color: red;
