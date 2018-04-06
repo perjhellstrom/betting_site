@@ -22,8 +22,8 @@ window.addEventListener("load", function(event) {
   }
 
   deactivateTabs();
-  disablePages();
-  enablePage("tournament-page");
+  disableTabs();
+  enableTab("tournament-tab");
 
 });
 

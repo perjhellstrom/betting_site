@@ -7,18 +7,18 @@ var deactivateTabs = function() {
     }
 };
 
-var disablePages = function() {
-    var pages = document.querySelectorAll(".tab-content-container");
-    for (var index = 0; index < pages.length; index++) {
-        pages[index].style.display = "none";
+var disableTabs = function() {
+    var tabContentContainers = document.querySelectorAll(".tab-content-container");
+    for (var index = 0; index < tabContentContainers.length; index++) {
+        tabContentContainers[index].style.display = "none";
     }
 };
 
-var enablePage = function(tabId) {
-    var activePage = tabId.replace("tab", "page");
-    var pageElement = document.getElementById(activePage);
-    pageElement.style.display = "block";
-    appendBracketTo(pageElement)
+var enableTab = function(tabId) {
+    var activeTabContentId = tabId + "-content";
+    var tabContentElement = document.getElementById(activeTabContentId);
+    tabContentElement.style.display = "block";
+    appendBracketTo(tabContentElement)
 }
 
 var onTabClick = function(event) {
@@ -30,7 +30,7 @@ var onTabClick = function(event) {
     activeTabId = clickedTab.id;
 
     deactivateTabs();
-    disablePages();
+    disableTabs();
     clickedTab.classList.add("tab-active");
-    enablePage(activeTabId);
+    enableTab(activeTabId);
 }
