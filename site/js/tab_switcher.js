@@ -8,7 +8,7 @@ var deactivateTabs = function() {
 };
 
 var disablePages = function() {
-    var pages = document.querySelectorAll(".page");
+    var pages = document.querySelectorAll(".tab-content-container");
     for (var index = 0; index < pages.length; index++) {
         pages[index].style.display = "none";
     }
